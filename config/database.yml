@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+  password: 12345
+  timeout: 5000
+  host: localhost
+
+development:
+  <<: *default
+  database: market_api_dev
+
+test:
+  <<: *default
+  database: market_api_test
+
+production:
+  <<: *default
+  database: market_api_prod
